@@ -30,21 +30,26 @@ public class Examen {
         float larpar=0;
         float anchazu=0;
         float larazu=0;
+        boolean comp = true;
+
         System.out.println("Introduce tu nombre:"); //Pido el nombre del usuario
         String nombre = entrada.next();
         System.out.println("La obra de "+nombre);
-        try{
-            System.out.println("Introduce el ancho de la pared..."); //Empiezo a pedir 4 numeros
-            anchpar = entrada.nextInt();
-            System.out.println("Introduce el largo de la pared...");
-            larpar = entrada.nextInt();
-            System.out.println("Introduce el ancho del azulejo...");
-            anchazu = entrada.nextInt();
-            System.out.println("Introduce el largo del azulejo...");
-            larazu = entrada.nextInt();
-        }catch (InputMismatchException err){
-            System.out.println("ERROR. Introduce un valor válido...");
-            entrada.nextLine();
+        while (comp){
+            try{
+                System.out.println("Introduce el ancho de la pared..."); //Empiezo a pedir 4 numeros
+                anchpar = entrada.nextInt();
+                System.out.println("Introduce el largo de la pared...");
+                larpar = entrada.nextInt();
+                System.out.println("Introduce el ancho del azulejo...");
+                anchazu = entrada.nextInt();
+                System.out.println("Introduce el largo del azulejo...");
+                larazu = entrada.nextInt();
+                comp=false;
+            }catch (InputMismatchException err){
+                System.out.println("ERROR. Introduce un valor válido...");
+                entrada.nextLine();
+            }
         }
 
         if(anchpar==0 || larpar==0 || anchazu==0 || larazu==0){
