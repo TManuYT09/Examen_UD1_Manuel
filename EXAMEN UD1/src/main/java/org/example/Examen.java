@@ -52,8 +52,8 @@ public class Examen {
             }
         }
 
-        if(anchpar==0 || larpar==0 || anchazu==0 || larazu==0){
-            System.out.println("No se puede calcular con uno de los numeros introducidos si es igual a 0");
+        if(anchpar<=0 || larpar<=0 || anchazu<=0 || larazu<=0){
+            System.out.println("No se puede calcular con uno de los numeros introducidos si es igual a 0 o inferior a este");
         }else{
             if (anchazu!=larazu){ //Si el ancho y largo del azulejo son iguales se corta el programa
                 if (anchazu < anchpar || larazu < larpar){ //Si el azulejo es mas grande que la pared se corta el programa
